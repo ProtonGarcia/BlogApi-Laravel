@@ -6,12 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-   protected $table = 'categories';
+    protected $table = 'categories';
 
-   /**
-    * Relacion de uno a muchos
-    */
-   public function posts(){
-       return $this->hasMany('app\Post');
-   }
+    protected $fillable = [
+        'name'
+    ];
+
+    /**
+     * Relacion de uno a muchos
+     */
+    public function posts()
+    {
+        return $this->hasMany('app\Post');
+    }
 }

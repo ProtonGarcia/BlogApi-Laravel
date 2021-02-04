@@ -66,4 +66,16 @@ Route::put('/update', 'UserController@update');
  * CATEGORIAS
  * estas seran rutas de tipo resource 
  */
-Route::resource('category', 'CategoryController@');
+Route::resource('/category', 'CategoryController');
+
+
+/**
+ * POSTS
+ */
+
+Route::resource('/post', 'PostController');
+//imagen del post
+Route::post('/post/upload', 'PostController@upload');
+Route::get('/post/image/{filename}', 'PostController@getImage');
+Route::get('/post/category/{category_id}', 'PostController@getPostByCategory');
+Route::get('/post/user/{user_id}', 'PostController@getPostsByUser');
